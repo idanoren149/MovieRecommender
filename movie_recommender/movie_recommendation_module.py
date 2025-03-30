@@ -4,16 +4,15 @@ import openai
 from dotenv import dotenv_values
 import json
 from pinecone import Pinecone, ServerlessSpec
-
-
-
-###
+import streamlit as st
 
 
 # Load API key
 config = dotenv_values(".env")
-api_key = config["OPENAI_API_KEY"]
-openai.api_key = api_key
+# api_key = config["OPENAI_API_KEY"]
+# openai.api_key = api_key
+openai.api_key = st.secrets["openai"]["api_key"]
+
 
 pinecone_api_key = config['PINECONE_API_KEY']
 
