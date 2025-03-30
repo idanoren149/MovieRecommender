@@ -9,12 +9,15 @@ import streamlit as st
 
 # Load API key
 config = dotenv_values(".env")
+
+## when running locally
 # api_key = config["OPENAI_API_KEY"]
 # openai.api_key = api_key
+# pinecone_api_key = config['PINECONE_API_KEY']
+
+## when deployed on streamlit cloud
 openai.api_key = st.secrets["openai"]["api_key"]
-
-
-pinecone_api_key = config['PINECONE_API_KEY']
+pinecone_api_key = st.secrets["pinecone"]["api_key"]
 
 class MovieRecommender():
     def __init__(self):
