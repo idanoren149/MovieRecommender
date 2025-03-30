@@ -35,7 +35,7 @@ if __name__ == "__main__":
     query_movie_name_embedded = embed(query_movie_name)[0]
 
     ## initialize pinecone
-    pc = Pinecone(api_key="pcsk_2mQKt1_DpveutRZj7oRErXmMYdTY8hhoCH36Z4TyFaGBkyTZ3gVMk6GB8TrDg2qA7wwEsD")
+    pc = Pinecone(api_key="")
 
     ## find movies with similar names and get the id
     movie_name_index_name = "movies-names-index"
